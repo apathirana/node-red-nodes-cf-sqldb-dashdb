@@ -146,7 +146,7 @@ function getColumns (node,db,table,service) {
       console.info(service+": Fetching column names for table " + table + "...");
       var sysibmColumns;
       try {
-         sysibmColumns = db.querySync("select name from sysibm.syscolumns where tbname = '"+table+"' and generated = ''");
+         sysibmColumns = db.querySync("select name from sysibm.syscolumns where tbname = '"+table+"' and generated = ' '");
       }
       catch (e) {
          node.error("Error fetching column list: " + e.message);
